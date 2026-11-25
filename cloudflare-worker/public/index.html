@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="Trích xuất nội dung website bằng WaterCrawl và lưu vào Cloudflare D1.">
+  <title>WaterCrawl — Web to knowledge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <svg class="icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6L12 3ZM20 2v4m-2-2h4"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-6 6-1 1a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m0 4 1-1a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0" transform="translate(1 1)"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8m-8 4h5"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+  </defs></svg>
+  <section class="hero" id="platform">
+    <div class="video-bg" aria-hidden="true">
+      <video id="hero-video" muted playsinline preload="metadata" poster="" disablepictureinpicture>
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260329_050842_be71947f-f16e-4a14-810c-06e83d23ddb5.mp4" type="video/mp4">
+      </video>
+    </div>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a class="brand" href="#platform"><span class="brand-mark">w</span>WaterCrawl<span class="brand-dot">.</span></a>
+      <div class="nav-links">
+        <a href="#platform">Platform</a>
+        <details class="features"><summary>Features <svg><use href="#i-down"/></svg></summary><div class="dropdown"><a href="#capture">Trích xuất website</a><a href="#library">Thư viện D1</a><a href="#how-it-works">Cách hoạt động</a></div></details>
+        <a href="#library">Library</a>
+        <a href="#how-it-works">How it works</a>
+      </div>
+      <button id="connect" class="button dark">Kết nối <span>↗</span></button>
+    </nav>
+    <main class="hero-content" id="capture">
+      <div class="badge"><span><svg><use href="#i-spark"/></svg> New</span><span>Website của bạn. Tri thức của bạn.</span></div>
+      <h1>From web.<br>To <span>knowledge.</span></h1>
+      <p class="subtitle">Biến nội dung website thành dữ liệu sẵn sàng sử dụng.<br>Trích xuất với WaterCrawl. Lưu trữ trên Cloudflare D1.</p>
+      <form id="capture-form" class="capture-box">
+        <div class="capture-top"><span class="connection"><i id="connection-dot"></i><span id="connection-label">Chưa kết nối</span></span><span><svg><use href="#i-db"/></svg> Powered by WaterCrawl + D1</span></div>
+        <div class="input-surface">
+          <label class="sr-only" for="url">URL website cần trích xuất</label>
+          <div class="input-row"><input id="url" type="url" maxlength="3000" placeholder="Dán đường dẫn website tại đây…" required autocomplete="url"><button id="submit" class="submit" type="submit" aria-label="Trích xuất và lưu vào D1"><svg><use href="#i-arrow"/></svg></button></div>
+          <div class="input-bottom"><div class="chips"><span><svg><use href="#i-link"/></svg> Một trang</span><span><svg><use href="#i-file"/></svg> Markdown</span><span><svg><use href="#i-db"/></svg> Lưu vào D1</span></div><span id="counter">0/3.000</span></div>
+        </div>
+      </form>
+      <p id="feedback" class="feedback" role="status" aria-live="polite">Một đường dẫn. Nội dung sạch. Sẵn sàng cho ý tưởng tiếp theo.</p>
+      <div class="hero-bottom"><span><i></i> YOUR CONTENT, CONNECTED</span><button id="motion" class="motion" aria-pressed="false">Tạm dừng nền</button><a href="#library">Khám phá thư viện ↓</a></div>
+    </main>
+  </section>
+  <section class="workspace" id="library" aria-labelledby="library-heading">
+    <div class="section-heading"><div><p class="eyebrow">YOUR KNOWLEDGE SPACE</p><h2 id="library-heading">Mọi nội dung, một nơi.</h2><p>Thu thập, xem lại và tải xuống nội dung đã lưu.</p></div><button class="button outline" id="refresh">Làm mới ↻</button></div>
+    <div class="stats"><div><span>Trang đã lưu</span><strong id="stat-pages">—</strong></div><div><span>Ký tự nội dung</span><strong id="stat-characters">—</strong></div><div><span>Định dạng đầu ra</span><strong class="stat-format">Markdown <span>↗</span></strong></div></div>
+    <div class="library-toolbar"><h3>Thư viện nội dung <span id="library-count">0</span></h3><label class="filter-label"><span class="sr-only">Tìm trong 50 trang gần nhất</span><input id="filter" type="search" placeholder="Tìm trong 50 trang gần nhất…"></label></div>
+    <div id="pages" class="pages"><div class="empty"><svg><use href="#i-file"/></svg><h3>Bắt đầu thư viện của bạn</h3><p>Kết nối workspace rồi thêm URL đầu tiên phía trên.</p></div></div>
+    <div class="jobs-heading"><h3>Hoạt động gần đây</h3><span>Tác vụ vẫn tiếp tục khi đóng tab</span></div>
+    <div id="jobs" class="jobs"><p class="muted">Chưa có tác vụ nào.</p></div>
+  </section>
+  <section id="how-it-works" class="how"><p class="eyebrow">A SIMPLER WORKFLOW</p><h2>Từ đường dẫn đến dữ liệu.</h2><div class="steps"><article><span>01 / INPUT</span><h3>Chọn một trang</h3><p>Dán URL công khai của bài viết, tài liệu hoặc trang bạn muốn lưu.</p></article><article><span>02 / EXTRACT</span><h3>Giữ lại nội dung chính</h3><p>WaterCrawl tải trang và chuyển nội dung thành Markdown.</p></article><article><span>03 / STORE</span><h3>Sẵn sàng sử dụng</h3><p>Lưu vào D1, cập nhật theo URL và tải xuống khi cần.</p></article></div></section>
+  <footer><a class="brand" href="#platform">WaterCrawl.</a><span>Built for curious minds. Stored at the edge.</span><a href="#platform">Trở về đầu trang ↑</a></footer>
+  <dialog id="auth-dialog"><form id="auth-form"><p class="eyebrow">PRIVATE WORKSPACE</p><h2>Kết nối workspace</h2><p>Nhập khóa APP_TOKEN đã cấu hình trong Worker. Khóa chỉ được giữ trong bộ nhớ của tab này.</p><label for="token">Khóa truy cập</label><input id="token" type="password" required minlength="24" autocomplete="off" placeholder="Nhập APP_TOKEN"><p id="auth-error" role="alert"></p><div class="dialog-actions"><button type="button" class="button outline" id="cancel-auth">Hủy</button><button type="submit" class="button dark">Kết nối ↗</button></div></form></dialog>
+  <dialog id="preview-dialog"><div class="preview-heading"><div><p class="eyebrow">SAVED IN D1</p><h2 id="preview-title"></h2></div><button id="close-preview" class="button outline" aria-label="Đóng bản xem trước">✕</button></div><a id="preview-url" target="_blank" rel="noopener noreferrer"></a><div class="preview-tools"><button id="copy" class="button outline">Sao chép</button><button id="download" class="button dark">Tải Markdown ↓</button></div><pre id="preview-content" tabindex="0"></pre></dialog>
+</body>
+</html>

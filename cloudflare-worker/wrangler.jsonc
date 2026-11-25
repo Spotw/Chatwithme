@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "watercrawl-d1",
+  "account_id": "4989aaecc7124ca854c90e1fbb9714f2",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-25",
+  "routes": [{ "pattern": "chat.pvdv.space", "custom_domain": true }],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "WATERCRAWL_BASE_URL": "https://api.watercrawl.dev"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "chatbox",
+    "database_id": "9b4d1d6c-b6bc-440a-b705-aaef9997ace2",
+    "migrations_dir": "migrations"
+  }],
+  "triggers": { "crons": ["* * * * *"] }
+}
